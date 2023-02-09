@@ -4,7 +4,7 @@ import * as protoLoader from "@grpc/proto-loader";
 import { join } from "path";
 import { ProtoGrpcType } from "./interfaces/pdf";
 import { PdfCreatorServiceHandlers } from "./interfaces/pdf_creator/PdfCreatorService";
-import { PdfService } from "./services/pdf.service";
+import { PdfService } from "./handler"
 
 dotenv.config();
 
