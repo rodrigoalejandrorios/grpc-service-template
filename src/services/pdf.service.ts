@@ -6,7 +6,7 @@ import {
   TemplateUsage,
 } from "./interfaces/pdf.params.interface";
 
-export class PdfBucketProvider {
+export class PdfService {
   private async getTemplate({ bucket, key, ext }: TemplateToObject) {
     try {
       //  const bk = process.env.S3_PDF_BUCKET;
