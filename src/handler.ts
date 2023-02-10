@@ -6,9 +6,9 @@ import {
 import { Params__Output } from "src/interfaces/pdf_creator/Params";
 import { PdfCreatorServiceHandlers } from "src/interfaces/pdf_creator/PdfCreatorService";
 import { Results } from "src/interfaces/pdf_creator/Results";
-import { PdfBucketProvider } from "./services/pdf.service";
+import { PdfService } from "./services/pdf.service";
 
-export class PdfService implements PdfCreatorServiceHandlers {
+export class PdfHander implements PdfCreatorServiceHandlers {
   [name: string]: UntypedHandleCall;
   CreatePdf(
     call: ServerUnaryCall<Params__Output, Results>,
@@ -17,7 +17,7 @@ export class PdfService implements PdfCreatorServiceHandlers {
     const { body, template } = call.request;
     console.log(body, template);
     console.log(`Call :: ${call.getPeer()} | ${call.getPath()}`);
-    new PdfBucketProvider()
+    new PdfService()
       .createPDFByTemplate({
         bucket: process.env.BUCKET_NAME,
         key: template,

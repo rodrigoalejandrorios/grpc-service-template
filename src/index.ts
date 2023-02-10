@@ -4,7 +4,7 @@ import * as protoLoader from "@grpc/proto-loader";
 import { join } from "path";
 import { ProtoGrpcType } from "./interfaces/pdf";
 import { PdfCreatorServiceHandlers } from "./interfaces/pdf_creator/PdfCreatorService";
-import { PdfService } from "./handler"
+import { PdfHander } from "./handler"
 
 dotenv.config();
 
@@ -27,7 +27,7 @@ class GrpcInitialize {
   }
 
   grpcStart() {
-    const grpsServicesDef = new PdfService();
+    const grpsServicesDef = new PdfHander();
     this._Server.addService(this._service.PdfCreatorService.service, {
       CreatePdf: grpsServicesDef.CreatePdf,
     } as PdfCreatorServiceHandlers);
