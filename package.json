@@ -1,12 +1,13 @@
 {
   "name": "pdf-creator",
   "version": "1.0.0",
-  "description": "PDF Crator",
+  "description": "Template gRPC NodeJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "proto:build": "sh proto-gen.sh",
-    "start:server": "clear && tsc && node dist/index.js"
+    "start:server": "clear && tsc && node dist/index.js",
+    "proto:generate": "ts-node src/libs/create.proto.ts"
   },
   "author": "Rodrigo Rios",
   "license": "ISC",
@@ -16,12 +17,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.266.0",
     "@grpc/grpc-js": "^1.8.7",
     "@grpc/proto-loader": "^0.7.4",
     "dotenv": "^16.0.3",
-    "grpc": "^1.24.11",
-    "handlebars": "^4.7.7",
-    "puppeteer": "^19.6.3"
+    "grpc": "^1.24.11"
   }
 }

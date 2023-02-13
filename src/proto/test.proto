@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package say_hello;
+
+service HelloService {
+  rpc SayHello (Params) returns (Results) {}
+  rpc SayBye (Params) returns (Results) {}
+}
+
+message Params {
+    string name = 1;
+}
+
+message Results {
+  string message = 1;
+}
+
+
+
+
