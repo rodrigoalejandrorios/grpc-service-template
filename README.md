@@ -26,7 +26,7 @@ export const InyectServiceGrpc: InyectServiceProps[] = [
 ];
 
 ```
-6) Initialize the service with the following command `npm run start:server`
+7) Initialize the service with the following command `npm run start:server`
 
 **The service will be initialized by default with the port: 50051**
 
