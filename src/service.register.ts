@@ -11,7 +11,7 @@ export const definePackage: DefinePackageProps<ProtoGrpcType>  = {
 
 export const InyectServiceGrpc: InyectServiceProps[] = [
   {
-    hanlder: HelloHanlder,
+    handler: HelloHanlder,
     nameService: "HelloService",
   },
   

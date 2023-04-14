@@ -35,7 +35,7 @@ export class ServiceRegister<T> {
 
 
 export interface InyectServiceProps {
-  hanlder: { new (): any };
+  handler: { new (): any };
   nameService: string;
 }
 
