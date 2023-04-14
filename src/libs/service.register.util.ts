@@ -10,16 +10,16 @@ export class ServiceRegister<T> {
   constructor({
     protoName,
     namePackage,
-    hanlder,
+    handler,
   }: {
     protoName: string;
     namePackage: keyof T;
-    hanlder: { new (): any };
+    handler: { new (): any };
   }) {
     this._package = protoLoader.loadSync(
       join(process.cwd(), `src/proto/${protoName}`)
     );
-    this.handler = hanlder;
+    this.handler = handler;
     this._proto = grpc.loadPackageDefinition(this._package) as unknown as T;
     this._service = this._proto[namePackage];
   }

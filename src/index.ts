@@ -18,7 +18,7 @@ class GrpcInitialize {
     InyectServiceGrpc.forEach((inyect) => {
       const { protoFileName, namePackage } = definePackage;
       const { declareHandler, services } = new ServiceRegister({
-        hanlder: inyect.hanlder,
+        handler: inyect.handler,
         namePackage,
         protoName: protoFileName,
       }).inyectServices(inyect.nameService);
