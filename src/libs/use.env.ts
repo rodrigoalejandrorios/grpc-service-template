@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import { IUseEnv } from "src/interfaces/env/env.interface";
+import { IUseEnv } from "./env/env.interface";
 
 dotenv.config();
 
