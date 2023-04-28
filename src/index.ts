@@ -1,13 +1,12 @@
 import * as grpc from "@grpc/grpc-js";
-import * as dotenv from "dotenv";
 import {
   InyectServiceGrpc,
   definePackage,
 } from "./service.register";
 import { ServiceRegister } from "./libs/service.register.util";
+import { UseConfigEnv } from "./libs/use.env";
 
-dotenv.config();
-
+const env = new UseConfigEnv()
 class GrpcInitialize {
   private _Server!: grpc.Server;
   constructor() {
@@ -26,7 +25,7 @@ class GrpcInitialize {
     });
 
     this._Server.bindAsync(
-      `localhost:${process.env.GRPC_PORT}`,
+      `localhost:${env.get('GRPC_PORT')}`,
       grpc.ServerCredentials.createInsecure(),
       (err: Error | null, bindPort: number) => {
         if (err) {
